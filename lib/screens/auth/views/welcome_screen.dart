@@ -50,7 +50,7 @@ class WelcomeScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Theme.of(
                           context,
-                        ).colorScheme.primary.withOpacity(0.12),
+                        ).colorScheme.primary.withValues(alpha: 0.12),
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
@@ -77,7 +77,7 @@ class WelcomeScreen extends StatelessWidget {
                         fontSize: 14,
                         color: Theme.of(
                           context,
-                        ).colorScheme.onSurface.withOpacity(0.8),
+                        ).colorScheme.onSurface.withValues(alpha: 0.8),
                       ),
                     ),
                     const SizedBox(height: 28),
@@ -200,14 +200,16 @@ class _HowItWorksPager extends StatelessWidget {
             width: 40,
             height: 6,
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.outline.withOpacity(0.5),
+              color: Theme.of(
+                context,
+              ).colorScheme.outline.withValues(alpha: 0.5),
               borderRadius: BorderRadius.circular(6),
             ),
           ),
         ),
         Expanded(
           child: PageView(
-            children: [
+            children: const [
               _HowItWorksPage(
                 title: 'Add expenses quickly',
                 subtitle:
@@ -254,7 +256,7 @@ class _HowItWorksPage extends StatelessWidget {
             radius: 40,
             backgroundColor: Theme.of(
               context,
-            ).colorScheme.primary.withOpacity(0.12),
+            ).colorScheme.primary.withValues(alpha: 0.12),
             child: Icon(
               icon,
               size: 36,
@@ -277,7 +279,9 @@ class _HowItWorksPage extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 14,
-              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.8),
+              color: Theme.of(
+                context,
+              ).colorScheme.onSurface.withValues(alpha: 0.8),
             ),
           ),
         ],
